@@ -9,7 +9,7 @@ const Hero = (props: Props) => {
   const [text, count] = useTypewriter({
     words: ["Hello World", "The Name's Nhat", "Saigonese.exe", "<Developer />", "<DataScientist/>"],
     loop: true,
-    delaySpeed: 2000,
+    delaySpeed: 1800,
   });
   return (
     <div className='h-screen flex flex-col space-y-8 justify-center items-center text-center overflow-hidden'>
