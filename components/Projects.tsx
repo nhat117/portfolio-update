@@ -37,9 +37,11 @@ const Projects = (props: Props) => {
               <div className='max-w-6xl px-10 space-y-10 md:px-10'>
                 <h4 className='text-4xl font-semibold text-center'>
                   <span className='underline decoration-[#F7AB0A]/50'>
-                    Case Study {i + 1} of {projects.length}: 
+                    Project
                   </span>
                   {" "}
+                  {i + 1} of {projects.length} :
+                  {"  "}
                   Retina IOS App
                 </h4>
                 <p className="text-lg text-center md:text-left">
