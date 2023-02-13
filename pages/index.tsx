@@ -5,7 +5,7 @@ import Header from '../components/Header';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import BackgroundCircles from '../components/BackgroundCircles';
-
+import WorkExperience from '../components/WorkExperience';
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -18,16 +18,17 @@ export default function Home() {
       <Header />
 
       {/* Hero */}
-      <section id="hero" className='snap-start'>
+      <section id="Hero" className='snap-start'>
         <Hero />
       </section>
       {/* About */}
-      <section id="about" className='snap-center'>
+      <section id="About" className='snap-center'>
         <About />
       </section>
-
       {/* Experience */}
-
+      <section id= "Experience" className='snap-center'>
+        <WorkExperience/>
+      </section>
       {/* Skills */}
 
       {/* Education */}

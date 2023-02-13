@@ -9,8 +9,9 @@ const About = (props: Props) => {
     <motion.div 
     initial={{ opacity: 0, x:-200}}
     whileInView={{ opacity: 1, x:0 }}
+    viewport={{ once: true }}
     transition={{ duration: 1.5, delay: 0.5 }}
-    className='flex relative flex-col text-center md:text-left md:flex-row h-screen max-w-7xl px-10 justify-evenly mx-auto items-center'>
+    className='relative flex flex-col items-center h-screen px-10 mx-auto text-center md:text-left md:flex-row max-w-7xl justify-evenly'>
       <h3 className='absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl'>About</h3>
       <motion.img
         className='-mb-20 mb:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[600px]'
@@ -20,11 +21,11 @@ const About = (props: Props) => {
         whileInView={{ x: 0, opacity: 1 }}
         src='https://user-images.githubusercontent.com/72547907/218299043-3b2bee8d-083d-4c7f-b91a-62444028edc2.jpg'
       />
-      <div className="space-y-10 px-0 md:px-10">
+      <div className="px-0 space-y-10 md:px-10">
         <h4 className="text-4xl font-semibold ">
           A <span className="underline decoration-[#F7AB0A]/50">little</span> {" "} bit about me
         </h4>
-        <p className="text-base"> I'm currently a Software Engineering student at RMIT University with a passion for data science and machine learning. I am constantly seeking new and innovative ways to apply my skills and knowledge in these fields to real-world problems.
+        <p className="text-xl"> I'm currently a Software Engineering student at RMIT University with a passion for data science and machine learning. I am constantly seeking new and innovative ways to apply my skills and knowledge in these fields to real-world problems.
 
 Throughout my studies, I have honed my programming skills in various languages including Python, Java, Javascript, C ++. I have also gained hands-on experience in data analysis and visualization, machine learning algorithms, and deep learning 🤖 🤖. My experience in these areas has not only expanded my technical abilities but also allowed me to develop a strong foundation in data-driven problem-solving.
 
