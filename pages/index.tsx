@@ -1,12 +1,13 @@
-import Head from 'next/head'
-import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
-import Header from '../components/Header';
-import Hero from '@/components/Hero';
-import About from '@/components/About';
-import BackgroundCircles from '../components/BackgroundCircles';
-import WorkExperience from '../components/WorkExperience';
-const inter = Inter({ subsets: ['latin'] })
+import Head from "next/head";
+import { Inter } from "@next/font/google";
+import styles from "@/styles/Home.module.css";
+import Header from "../components/Header";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import BackgroundCircles from "../components/BackgroundCircles";
+import WorkExperience from "../components/WorkExperience";
+import Skills from "../components/Skills";
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
@@ -18,18 +19,21 @@ export default function Home() {
       <Header />
 
       {/* Hero */}
-      <section id="Hero" className='snap-start'>
+      <section id='Hero' className='snap-start'>
         <Hero />
       </section>
       {/* About */}
-      <section id="About" className='snap-center'>
+      <section id='About' className='snap-center'>
         <About />
       </section>
       {/* Experience */}
-      <section id= "Experience" className='snap-center'>
-        <WorkExperience/>
+      <section id='Experience' className='snap-center'>
+        <WorkExperience />
       </section>
       {/* Skills */}
+      <section id='Skill' className='snap-start'>
+        <Skills />
+      </section>
 
       {/* Education */}
 
@@ -37,5 +41,5 @@ export default function Home() {
 
       {/* Contact Me */}
     </div>
-  )
+  );
 }

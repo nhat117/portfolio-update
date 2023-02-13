@@ -25,11 +25,7 @@ const About = (props: Props) => {
         <h4 className="text-4xl font-semibold ">
           A <span className="underline decoration-[#F7AB0A]/50">little</span> {" "} bit about me
         </h4>
-        <p className="text-xl"> I'm currently a Software Engineering student at RMIT University with a passion for data science and machine learning. I am constantly seeking new and innovative ways to apply my skills and knowledge in these fields to real-world problems.
-
-Throughout my studies, I have honed my programming skills in various languages including Python, Java, Javascript, C ++. I have also gained hands-on experience in data analysis and visualization, machine learning algorithms, and deep learning 🤖 🤖. My experience in these areas has not only expanded my technical abilities but also allowed me to develop a strong foundation in data-driven problem-solving.
-
-🌱 🌱 In my free time, I like to engage in activities that complement my technical skills and help me bring a unique perspective to my work. I play piano to tap into my creative side, read books to broaden my knowledge and stay inspired, and take photographs 📸 📸 to express my artistic vision.</p>
+        <p className="text-xl"> {"I'm currently a Software Engineering student at RMIT University with a passion for data science and machine learning. I am constantly seeking new and innovative ways to apply my skills and knowledge in these fields to real-world problems.Throughout my studies, I have honed my programming skills in various languages including Python, Java, Javascript, C ++. I have also gained hands-on experience in data analysis and visualization, machine learning algorithms, and deep learning 🤖 🤖. My experience in these areas has not only expanded my technical abilities but also allowed me to develop a strong foundation in data-driven problem-solving.🌱 🌱 In my free time, I like to engage in activities that complement my technical skills and help me bring a unique perspective to my work. I play piano to tap into my creative side, read books to broaden my knowledge and stay inspired, and take photographs 📸 📸 to express my artistic vision."}</p>
       </div>
     </motion.div>
   );
