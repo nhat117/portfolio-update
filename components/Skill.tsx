@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+
 type Props = {
   directionLeft?: boolean;
 };
@@ -23,9 +24,9 @@ const Skill = (props: Props) => {
           />
         </div>
       </motion.div>
-      <div className="absolute z-0 w-24 h-24 transition duration-300 ease-in-out rounded-full opacity-0 group-hover:opacity-80 group-hover:bg-white xl:w-32 xl:h-32">
-        <div className="flex items-center justify-center h-full">
-          <p className="text-3xl font-bold text-black opacity-300">70%</p>
+      <div className='absolute z-0 w-24 h-24 transition duration-300 ease-in-out rounded-full opacity-0 group-hover:opacity-80 group-hover:bg-white xl:w-32 xl:h-32'>
+        <div className='flex items-center justify-center h-full'>
+          <p className='text-3xl font-bold text-black opacity-300'>70%</p>
         </div>
       </div>
     </div>

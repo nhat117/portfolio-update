@@ -12,20 +12,20 @@ const Hero = (props: Props) => {
     delaySpeed: 1800,
   });
   return (
-    <div className='h-screen flex flex-col space-y-8 justify-center items-center text-center overflow-hidden'>
+    <div className='flex flex-col items-center justify-center h-screen space-y-8 overflow-hidden text-center'>
       <BackgroundCircles />
-      <div className='relative h-32 w-32 mx-auto'>
+      <div className='relative w-32 h-32 mx-auto'>
         <Image
           src='https://user-images.githubusercontent.com/72547907/218288648-b1050de3-fd0a-4971-8c11-3379fab597c2.jpg'
           alt='Nhat Bui'
           width={600}
           height={600}
-          className='object-cover object-contain rounded-full'
+          className='object-cover rounded-full'
         />
       </div>
       <div className='z-20'>
         <h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[15px]'>Software Engineer </h2>
-        <h1 className='text-5xl lg:text-6xl font-semibold px-10'>
+        <h1 className='px-10 text-5xl font-semibold lg:text-6xl'>
           <span className='mr-3'>{text}</span>
           <Cursor cursorColor='#F7AB0A' />
         </h1>
