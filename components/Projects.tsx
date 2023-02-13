@@ -13,7 +13,7 @@ const Projects = (props: Props) => {
       transition={{ duration: 1.5, ease: "easeInOut" }}
       className='relative flex flex-col items-start h-screen max-w-full mx-auto overflow-hidden text-left md:flex-row justify-evenly'>
       <h3 className='absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl'>Projects</h3>
-      <div className='relative z-20 flex w-full overflow-x-scroll overflow-y-hidden snap-x snap-mandatory'>
+      <div className='relative z-20 flex w-full overflow-x-scroll overflow-y-hidden snap-x snap-mandatory scrollbar scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/40'>
         {projects.map((project, i) => {
           return (
             <div

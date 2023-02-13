@@ -45,6 +45,9 @@ const Hero = (props: Props) => {
           <Link href='#Projects'>
             <button className='heroButton'>Projects</button>
           </Link>
+          <Link href='#Contact'>
+            <button className='heroButton'>Contact</button>
+          </Link>
         </div>
       </div>
     </div>
