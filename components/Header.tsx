@@ -1,10 +1,14 @@
-import React from "react";
+import React, { use } from "react";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
 import Link from "next/link";
-type Props = {};
+import { SocialMedia } from "@/typing";
+import { useEffect } from "react";
+type Props = {
+  socials: SocialMedia[];
+};
 
-const Header = (props: Props) => {
+const Header = ({socials}: Props) => {
   return (
     <header className='sticky top-0 z-20 flex items-start justify-between p-5 mx-auto max-w-7xl xl:items-center'>
       <motion.div
@@ -14,21 +18,15 @@ const Header = (props: Props) => {
         className='flex flex-row items-center'
       >
         {/* Social Icons */}
-        <SocialIcon
-          url='https://www.linkedin.com/in/tommy-nguyen-1b1b2b1b1/'
-          fgColor='gray'
-          bgColor='transparent'
-        />
-        <SocialIcon
-          url='https://www.linkedin.com/in/tommy-nguyen-1b1b2b1b1/'
-          fgColor='gray'
-          bgColor='transparent'
-        />
-        <SocialIcon
-          url='https://www.linkedin.com/in/tommy-nguyen-1b1b2b1b1/'
-          fgColor='gray'
-          bgColor='transparent'
-        />
+        {socials.map((social) => (
+          <SocialIcon
+            className='cursor-pointer'
+            key={social._id}
+            url={social.url}
+            fgColor='gray'
+            bgColor='transparent'
+          />
+        ))}
       </motion.div>
       <Link href="#Contact">
         <motion.div

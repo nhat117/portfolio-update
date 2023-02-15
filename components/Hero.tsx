@@ -3,9 +3,12 @@ import { Cursor, useTypewriter } from "react-simple-typewriter";
 import BackgroundCircles from "./BackgroundCircles";
 import Image from "next/image";
 import Link from "next/link";
-type Props = {};
+import { PageInfo } from "@/typing";
+type Props = {
+  pageInfo: PageInfo;
+};
 
-const Hero = (props: Props) => {
+const Hero = ({pageInfo}: Props) => {
   const [text, count] = useTypewriter({
     words: ["Hello World", "The Name's Nhat", "Saigonese.exe", "<Developer />", "<DataScientist/>"],
     loop: true,
