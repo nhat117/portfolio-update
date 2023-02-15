@@ -3,9 +3,13 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import CustomImage from "./CustomImage";
-type Props = {};
+import { Experience } from '../typing';
 
-const ExperienceCard = (props: Props) => {
+type Props = {
+  experience: Experience
+};
+
+const ExperienceCard = ({experience}: Props) => {
   return (
     <article
       className='flex flex-col items-center flex-shrink-0 rounded-lg space-y-7 w-[500px] md:w-[600px] xl:w-[900px] snap-center p-10 bg-[#292929] hover:opacity-100 opacity-40 cursor-pointer
@@ -27,8 +31,8 @@ const ExperienceCard = (props: Props) => {
         />
       </motion.div>
       <div className='px-0 md:px-10'>
-        <h4 className='text-4xl font-light'>CEO of DELICHILL</h4>
-        <p className='mt-1 text-2xl font-bold'>DELICHILL</p>
+        <h4 className='text-4xl font-light'>{experience.jobTitle}</h4>
+        <p className='mt-1 text-2xl font-bold'>{experience.companyName}</p>
         <div className='flex my-2 space-x-2'>
           <CustomImage
             className='relative w-10 h-10'
@@ -59,13 +63,13 @@ const ExperienceCard = (props: Props) => {
             alt='python'
           />
         </div>
-        <p className='py-5 text-gray-300 uppercase'>10/2021-06/2022</p>
+        <p className='py-5 text-gray-300 uppercase'>{`${experience.startDate} / ${experience.endDate}`}</p>
         <ul className='ml-5 space-y-4 text-lg list-disc'>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, nihil?</li>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, nihil?</li>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, nihil?</li>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, nihil?</li>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, nihil?</li>
+          {experience.points.map((point) => (
+            <li key={point} className='text-gray-300'>
+              {point}
+            </li>
+          ))}
         </ul>
       </div>
     </article>

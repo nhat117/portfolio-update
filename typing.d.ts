@@ -57,6 +57,7 @@ export interface Experience extends SanityBody {
   endDate: string;
   companyLogo: Image;
   technologies: Technology[];
+  points: string[];
 }
 
 export interface SocialMedia extends SanityBody {

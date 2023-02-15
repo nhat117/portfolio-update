@@ -1,9 +1,13 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import Skill from './Skill'
-type Props = {}
+import { Skill } from '../typing'
+import SkillComponent from './SkillComponent';
 
-const Skills = (props: Props) => {
+type Props = {
+  skills : Skill[];
+}
+
+const Skills = ({skills}: Props) => {
   return (
     <motion.div 
         initial={{ opacity: 0}}
@@ -15,17 +19,11 @@ const Skills = (props: Props) => {
         <h3 className='absolute top-36 uppercase tracking-[3px] text-gray-500 text-sm'>Hover over a skill for currency proficiency</h3>
         {/* A div contains a grid pattern */}
         <div className='grid grid-cols-4 gap-5'>
-            <Skill />
-            <Skill />
-            <Skill />
-            <Skill />
-            <Skill />
-            <Skill />
-            <Skill />
-            <Skill />
-            <Skill />
-            <Skill />
-            <Skill />
+          {
+            skills.map((skill, index) => {
+              return <SkillComponent key={index} skill={skill} />
+            })
+          }
         </div>
     </motion.div>
   )

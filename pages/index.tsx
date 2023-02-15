@@ -11,13 +11,13 @@ import { GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { Props } from "react-copy-to-clipboard";
-import { Experience, PageInfo, Project, Skill, SocialMedia } from '../typing';
-import { fetchPageInfo } from '../utils/fetchPageInfo';
+import { Experience, PageInfo, Project, Skill, SocialMedia } from "../typing";
+import { fetchPageInfo } from "../utils/fetchPageInfo";
 import { fetchExperience } from "@/utils/fetchExperience";
 import { fetchProject } from "@/utils/fetchProject";
 import { fetchSkill } from "@/utils/fetchSkill";
 import { fetchSocialMedia } from "@/utils/fetchSocialMedia";
-import async from './api/getExperience';
+import async from "./api/getExperience";
 import socialMedia from "@/sanity/schemas/socialMedia";
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,36 +30,31 @@ type Props = {
   socialMedias: SocialMedia[];
 };
 
-export default function Home({pageInfo,
-  experiences,
-  projects,
-  skills,
-  socialMedias,} : Props) {
+export default function Home({ pageInfo, experiences, projects, skills, socialMedias }: Props) {
   // Add event listener to track the scroll position
 
-  
   return (
     <div className='bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-scroll z-0 overflow-y-scroll overflow-x-hidden scrollbar scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/40'>
       <Head>
         <title>Tommy Portfolio</title>
       </Head>
 
-      <Header socials = {socialMedias}/>
+      {/* <Header socials = {socialMedias}/> */}
 
       <section id='Hero' className='snap-start'>
-        <Hero pageInfo = {pageInfo}/>
+        <Hero pageInfo={pageInfo} />
       </section>
 
       <section id='About' className='snap-center'>
-        <About />
+        <About pageInfo={pageInfo} />
       </section>
 
       <section id='Experience' className='snap-center'>
-        <WorkExperience />
+        <WorkExperience experiences={experiences} />
       </section>
 
       <section id='Skill' className='snap-start'>
-        <Skills />
+        <Skills skills={skills} />
       </section>
 
       <section id='Projects' className='snap-start'>
@@ -87,7 +82,7 @@ export default function Home({pageInfo,
 //For caching and fetching data from API
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const pageInfo: PageInfo  = await fetchPageInfo();
+  const pageInfo: PageInfo = await fetchPageInfo();
   const experiences: Experience[] = await fetchExperience();
   const projects: Project[] = await fetchProject();
   const skills: Skill[] = await fetchSkill();
@@ -101,6 +96,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       skills,
       socialMedias,
     },
-    revalidate: 100,
+    revalidate: 10,
   };
-}
+};

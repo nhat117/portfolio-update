@@ -13,7 +13,7 @@ type Data = {
 };
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const pageInfo: any = await sanityClient.fetch(query).catch((err) => console.log(err));
+  const pageInfo: PageInfo = await sanityClient.fetch(query).catch((err) => console.log(err));
   console.log(pageInfo);
   res.status(200).json(pageInfo);
 }
