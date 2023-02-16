@@ -5,7 +5,8 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'user-images.githubusercontent.com',
+        // hostname: 'user-images.githubusercontent.com',
+        hostname: 'cdn.sanity.io',
       },
     ],
   },

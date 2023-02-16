@@ -1,8 +1,11 @@
 import React from "react";
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { PageInfo } from '../typing';
 
-type Props = {};
+type Props = {
+  pageInfo: PageInfo;
+};
 
 type Inputs = {
   name: string;
@@ -11,7 +14,7 @@ type Inputs = {
   message: string;
 };
 
-const ContactMe = (props: Props) => {
+const ContactMe = ({pageInfo}: Props) => {
   const { register, handleSubmit } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = (formData) => {
@@ -30,17 +33,17 @@ const ContactMe = (props: Props) => {
         <div className='flex flex-col items-start space-y-10'>
           <div className='flex items-center justify-center space-x-5'>
             <PhoneIcon className='text-[#F7AB0A] h-7 w-7 animate-pulse' />
-            <p className='text-2xl'>+1234567890</p>
+            <p className='text-2xl'>{pageInfo.phoneNumber}</p>
           </div>
 
           <div className='flex items-center justify-center space-x-5'>
             <EnvelopeIcon className='text-[#F7AB0A] h-7 w-7 animate-pulse' />
-            <p className='text-2xl'>nhat117@gmail.com</p>
+            <p className='text-2xl'>{pageInfo.email}</p>
           </div>
 
           <div className='flex items-center justify-center space-x-5'>
             <MapPinIcon className='text-[#F7AB0A] h-7 w-7 animate-pulse' />
-            <p className='text-2xl'>7000 Ho Chi Minh City</p>
+            <p className='text-2xl'>{pageInfo.address}</p>
           </div>
         </div>
 

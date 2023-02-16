@@ -1,9 +1,7 @@
-import React, { use } from "react";
-import { SocialIcon } from "react-social-icons";
+import { SocialMedia } from "@/typing";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { SocialMedia } from "@/typing";
-import { useEffect } from "react";
+import { SocialIcon } from "react-social-icons";
 type Props = {
   socials: SocialMedia[];
 };

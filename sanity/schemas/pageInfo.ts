@@ -52,6 +52,12 @@ export default defineType({
       type: 'string',
     },
     {
+      name: 'typewriterText',
+      title: 'TypewriterText',
+      type: 'array',
+      of: [{type: 'string'}],
+    },
+    {
       name: 'socialMedias',
       title: 'SocialMedias',
       type: 'array',
