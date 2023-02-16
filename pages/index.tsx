@@ -17,7 +17,6 @@ import { fetchProject } from "@/utils/fetchProject";
 import { fetchSkill } from "@/utils/fetchSkill";
 import { fetchSocialMedia } from "@/utils/fetchSocialMedia";
 import async from "./api/getExperience";
-import socialMedia from "@/sanity/schemas/socialMedia";
 const inter = Inter({ subsets: ["latin"] });
 
 //Type definition
