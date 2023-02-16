@@ -29,7 +29,7 @@ const About = ({ pageInfo }: Props) => {
       />
       <div className='px-0 space-y-10 md:px-10'>
         <h4 className='text-4xl font-semibold '>
-          <span className='underline decoration-[#F7AB0A]/50'>{`I'm ${pageInfo?.name}`}</span>
+          <span className='underline decoration-[#F7AB0A]/50'>{`My name is ${pageInfo?.name}`}</span>
         </h4>
         <p className='text-xl'> {pageInfo?.backgroundInfo}</p>
       </div>
