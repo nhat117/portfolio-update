@@ -1,6 +1,5 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import { Skill } from '../typing'
+import { motion } from 'framer-motion';
+import { Skill } from '../typing';
 import SkillComponent from './SkillComponent';
 
 type Props = {

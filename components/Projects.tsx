@@ -1,7 +1,6 @@
-import React from "react";
-import Image from "next/image";
-import { motion } from "framer-motion";
 import { Project } from "@/typing";
+import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { SocialIcon } from "react-social-icons";
 import { urlFor } from '../sanity';

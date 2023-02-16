@@ -1,11 +1,8 @@
 // Component for experience card
-import React from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
-import CustomImage from "./CustomImage";
-import { Experience } from "../typing";
-import { url } from "inspector";
+import Image from "next/image";
 import { urlFor } from "../sanity";
+import { Experience } from "../typing";
 
 type Props = {
   experience: Experience;

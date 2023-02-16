@@ -5,6 +5,10 @@ import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import WorkExperience from "@/components/WorkExperience";
+import { fetchExperience } from "@/utils/fetchExperience";
+import { fetchProject } from "@/utils/fetchProject";
+import { fetchSkill } from "@/utils/fetchSkill";
+import { fetchSocialMedia } from "@/utils/fetchSocialMedia";
 import { ArrowSmallUpIcon } from "@heroicons/react/24/solid";
 import { Inter } from "@next/font/google";
 import { GetStaticProps } from "next";
@@ -12,11 +16,6 @@ import Head from "next/head";
 import Link from "next/link";
 import { Experience, PageInfo, Project, Skill, SocialMedia } from "../typing";
 import { fetchPageInfo } from "../utils/fetchPageInfo";
-import { fetchExperience } from "@/utils/fetchExperience";
-import { fetchProject } from "@/utils/fetchProject";
-import { fetchSkill } from "@/utils/fetchSkill";
-import { fetchSocialMedia } from "@/utils/fetchSocialMedia";
-import async from "./api/getExperience";
 const inter = Inter({ subsets: ["latin"] });
 
 //Type definition
@@ -32,7 +31,7 @@ export default function Home({ pageInfo, experiences, projects, skills, socialMe
   return (
     <div className='bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-scroll z-0 overflow-y-scroll overflow-x-hidden scrollbar scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/40'>
       <Head>
-        <title>{pageInfo.name} Portfolio</title>
+        <title>{pageInfo?.name} Portfolio</title>
       </Head>
 
       <Header socials = {socialMedias}/>

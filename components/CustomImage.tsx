@@ -1,6 +1,4 @@
-import React from 'react'
 import Image from 'next/image';
-import exp from 'constants';
 
 type Props = {
     src: string,

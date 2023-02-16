@@ -1,7 +1,6 @@
-import React from "react";
+import { Skill } from '@/typing';
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Skill } from '@/typing';
 import { urlFor } from '../sanity';
 
 type Props = {

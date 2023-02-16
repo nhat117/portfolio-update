@@ -1,9 +1,7 @@
 //Type script code snippet
-import React from "react";
 import { motion } from "framer-motion";
-import { PageInfo } from "../typing";
-import { url } from 'inspector';
 import { urlFor } from '../sanity';
+import { PageInfo } from "../typing";
 
 type Props = {
   pageInfo: PageInfo;

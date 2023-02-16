@@ -1,6 +1,5 @@
-import React from "react";
-import { PhoneIcon, MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { EnvelopeIcon, MapPinIcon, PhoneIcon } from "@heroicons/react/24/solid";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { PageInfo } from '../typing';
 
 type Props = {
