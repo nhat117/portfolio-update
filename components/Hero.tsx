@@ -4,6 +4,7 @@ import BackgroundCircles from "./BackgroundCircles";
 import Image from "next/image";
 import Link from "next/link";
 import { PageInfo } from "@/typing";
+import { urlFor } from '../sanity';
 type Props = {
   pageInfo: PageInfo;
 };
@@ -11,7 +12,7 @@ type Props = {
 const Hero = ({pageInfo}: Props) => {
 
   const [text, count] = useTypewriter({
-    words: ["Hello World", `The Name's ${pageInfo.name}`, "Saigonese.exe", "<Developer />", "<DataScientist/>"],
+    words: pageInfo?.typewriterText,
     loop: true,
     delaySpeed: 1800,
   });
@@ -20,7 +21,7 @@ const Hero = ({pageInfo}: Props) => {
       <BackgroundCircles />
       <div className='relative w-32 h-32 mx-auto'>
         <Image
-          src='https://user-images.githubusercontent.com/72547907/218288648-b1050de3-fd0a-4971-8c11-3379fab597c2.jpg'
+          src={urlFor(pageInfo?.heroImage).url()}
           alt='Nhat Bui'
           width={600}
           height={600}

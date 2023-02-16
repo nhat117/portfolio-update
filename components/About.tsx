@@ -2,6 +2,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { PageInfo } from "../typing";
+import { url } from 'inspector';
+import { urlFor } from '../sanity';
 
 type Props = {
   pageInfo: PageInfo;
@@ -23,13 +25,13 @@ const About = ({ pageInfo }: Props) => {
         transition={{ duration: 1.2, delay: 0.5 }}
         viewport={{ once: true }}
         whileInView={{ x: 0, opacity: 1 }}
-        src='https://user-images.githubusercontent.com/72547907/218299043-3b2bee8d-083d-4c7f-b91a-62444028edc2.jpg'
+        src={urlFor(pageInfo?.profilePic).url()}
       />
       <div className='px-0 space-y-10 md:px-10'>
         <h4 className='text-4xl font-semibold '>
-          <span className='underline decoration-[#F7AB0A]/50'>Hi I'm {`${pageInfo.name}`}</span>
+          <span className='underline decoration-[#F7AB0A]/50'>{`I'm ${pageInfo?.name}`}</span>
         </h4>
-        <p className='text-xl'> {pageInfo.backgroundInfo}</p>
+        <p className='text-xl'> {pageInfo?.backgroundInfo}</p>
       </div>
     </motion.div>
   );

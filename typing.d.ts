@@ -22,6 +22,7 @@ export interface PageInfo extends SanityBody {
     phoneNumber: string;
     profilePic: Image;
     role: string;
+    typewriterText: string[];
     socialMedias: Image;
 }
 
