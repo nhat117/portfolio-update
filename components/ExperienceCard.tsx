@@ -35,7 +35,7 @@ const ExperienceCard = ({ experience }: Props) => {
       <div className='px-0 md:px-10'>
         <h4 className='text-4xl font-light'>{experience?.jobTitle}</h4>
         <p className='mt-1 text-2xl font-bold'>{experience?.companyName}</p>
-        <p className='text-gray-300 uppercase'>{`${experience.startDate} / ${experience.endDate}`}</p>
+        <p className='text-gray-300 uppercase'>{`${experience?.startDate} / ${experience?.endDate}`}</p>
         <div className='flex items-center content-center w-10 h-10 my-3 space-x-2'>
           {experience?.technologies.map((technology, index) => (
             <Image
@@ -50,7 +50,7 @@ const ExperienceCard = ({ experience }: Props) => {
         </div>
         <p className='py-5 text-xl font-semibold text-gray-300 uppercase'>{`Responsibility`}</p>
         <ul className='ml-5 space-y-4 overflow-y-scroll text-lg list-disc max-h-96 scrollbar-thin scrollbar-track-black scrollbar-thumb-[#F7AB0A]/40 scrollbar'>
-          {experience.points.map((point, index) => (
+          {experience?.points.map((point, index) => (
             <li key={index} className='text-gray-300'>
               {point}
             </li>
