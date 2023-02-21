@@ -11,11 +11,12 @@ import { fetchSkill } from "@/utils/fetchSkill";
 import { fetchSocialMedia } from "@/utils/fetchSocialMedia";
 import { ArrowSmallUpIcon } from "@heroicons/react/24/solid";
 import { Inter } from "@next/font/google";
-import { GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { Experience, PageInfo, Project, Skill, SocialMedia } from "../typing";
 import { fetchPageInfo } from "../utils/fetchPageInfo";
+import { useRouter } from "next/router";
 const inter = Inter({ subsets: ["latin"] });
 
 //Type definition
@@ -28,13 +29,17 @@ type Props = {
 };
 
 export default function Home({ pageInfo, experiences, projects, skills, socialMedias }: Props) {
+  const { isFallback } = useRouter();
+  if (isFallback) {
+    return <h1>Fallback</h1>;
+  }
   return (
     <div className='bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-scroll z-0 overflow-y-scroll overflow-x-hidden scrollbar scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/40'>
       <Head>
         <title>{pageInfo?.name} Portfolio</title>
       </Head>
 
-      <Header socials = {socialMedias}/>
+      <Header socials={socialMedias} />
 
       <section id='Hero' className='snap-start'>
         <Hero pageInfo={pageInfo} />
@@ -57,7 +62,7 @@ export default function Home({ pageInfo, experiences, projects, skills, socialMe
       </section>
 
       <section id='Contact' className='snap-start'>
-        <ContactMe pageInfo={pageInfo}/>
+        <ContactMe pageInfo={pageInfo} />
       </section>
 
       {/* Education */}
@@ -76,7 +81,7 @@ export default function Home({ pageInfo, experiences, projects, skills, socialMe
 
 //For caching and fetching data from API
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
+export const getServerSideProps: GetServerSideProps<Props> = async () => {
   const pageInfo: PageInfo = await fetchPageInfo();
   const experiences: Experience[] = await fetchExperience();
   const projects: Project[] = await fetchProject();
@@ -91,6 +96,5 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       skills,
       socialMedias,
     },
-    revalidate: 10,
   };
 };
